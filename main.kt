@@ -88,3 +88,15 @@ fun fishFood (day : String) : String {
         else -> "nothing"
     }
 } */
+
+class Person(val firstName: String = "Tom", val lastName: String = "Hardy"){
+    var nickName: String? = null
+        set(value) {
+            field = value
+            println("the new nickname is $value")
+        }
+        get() {
+            println("the returned value is $field")
+            return field;
+        }
+}
