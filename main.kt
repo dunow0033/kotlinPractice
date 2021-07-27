@@ -147,3 +147,16 @@ fun main() {
 
     println(msg)
 }
+
+fun printFilteredStrings(list: List<String>, predicate: (String) -> Boolean){
+    list.forEach{
+        if(predicate(it)){
+            println(it)
+        }
+    }
+}
+
+fun main(){
+    val list = listOf("Kotlin", "Java", "C++", "C#")
+    printFilteredStrings(list, { it.startsWith("K")})
+}
