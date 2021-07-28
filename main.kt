@@ -179,3 +179,26 @@ fun main(){
 
     printFilteredStrings(list, null)
 }
+
+fun main() {
+    sayHello()
+}
+
+fun sayHello(){
+    val array = Array(5){it * 2}
+    println(java.util.Arrays.toString(array))
+
+    val school = arrayOf("shark", "salmon", "minnow")
+    for(element in school){
+        print(element + " ")
+    }
+
+    for((index, element) in school.withIndex()){
+        println("Item at $index is $element")
+    }
+
+    for((index, ele) in school.withIndex()){
+        println("Item at $index is $ele")
+    }
+
+}
