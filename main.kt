@@ -202,3 +202,18 @@ fun sayHello(){
     }
 
 }
+
+val filtered = decorations.asSequence().filter { it[0] == 'p' }
+    val newList = filtered.toList()
+    println(newList)
+
+    val lazyMap = decorations.asSequence().map {
+        println("access: $it")
+        it
+    }
+
+    println("lazy: $lazyMap")
+    println("-----")
+    println("first: ${lazyMap.first()}")
+    println("-----")
+    println("all: ${lazyMap.toList()}")
