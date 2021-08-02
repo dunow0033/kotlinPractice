@@ -217,3 +217,32 @@ val filtered = decorations.asSequence().filter { it[0] == 'p' }
     println("first: ${lazyMap.first()}")
     println("-----")
     println("all: ${lazyMap.toList()}")
+
+    class Shark: FishAction, FishColor {
+    override val color = "gray"
+    override fun eat() {
+        println("hunt and eat fish")
+    }
+}
+
+class Plecostomus(fishColor: FishColor = GoldColor):
+    FishAction by PrintingFishAction("eat algae"),
+    FishColor by fishColor
+
+class PrintingFishAction(val food: String) : FishAction {
+    override fun eat() {
+        println(food)
+    }
+}
+
+object GoldColor : FishColor {
+    override val color = "gold"
+}
+
+interface FishAction {
+    fun eat()
+}
+
+interface FishColor {
+    val color: String
+}
